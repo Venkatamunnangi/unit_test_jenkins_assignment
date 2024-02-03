@@ -16,7 +16,7 @@ pipeline {
                 script {
                     // Install dependencies and run pytest for the Python project
                     sh 'pip install pytest'
-                    sh 'pytest test_math_utils.py'
+                    sh 'python -m pytest'
                 }
             }
         }
