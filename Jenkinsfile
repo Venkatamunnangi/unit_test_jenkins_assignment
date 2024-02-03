@@ -11,15 +11,6 @@ pipeline {
             }
         }
 
-        stage('Build and Test Java') {
-            steps {
-                script {
-                    // Build and test the Java project using Maven
-                    sh 'mvn clean test'
-                }
-            }
-        }
-
         stage('Build and Test Python') {
             steps {
                 script {
@@ -33,8 +24,6 @@ pipeline {
 
     post {
         always {
-            // Publish JUnit test results for Java
-            junit '**/target/surefire-reports/*.xml'
 
             // Publish Pytest test results for Python
             publishTestResults(testResults: 'pytest.xml', failIfNoResults: true)
