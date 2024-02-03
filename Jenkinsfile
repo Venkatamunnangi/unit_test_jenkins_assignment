@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     // Install dependencies and run pytest for the Python project
-                    sh 'pip install -r requirements.txt'
+                    sh 'pip install pytest'
                     sh 'pytest test_math_utils.py'
                 }
             }
