@@ -8,6 +8,7 @@ pipeline {
                 script {
                     git 'https://github.com/Venkatamunnangi/unit_test_jenkins_assignment'
                 }
+                echo "checked into git repository successfully!"
             }
         }
 
@@ -18,6 +19,7 @@ pipeline {
                     sh 'pip install pytest'
                     sh 'python -m pytest'
                 }
+                echo "tests run successfully!"
             }
         }
     }
